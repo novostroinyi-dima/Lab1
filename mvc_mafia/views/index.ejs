@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mafia Game</title>
+</head>
+<body>
+    <h1>Mafia Game Setup</h1>
+    <form method="post" action="/add-player">
+        <input type="text" name="name" placeholder="Player name" required>
+        <select name="role">
+            <option value="citizen">Citizen</option>
+            <option value="mafia">Mafia</option>
+            <option value="detective">Detective</option>
+            <option value="doctor">Doctor</option>
+        </select>
+        <button type="submit">Add Player</button>
+    </form>
+    <ul>
+        <% players.forEach(p => { %>
+            <li><%= p.name %> - <%= p.role %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
